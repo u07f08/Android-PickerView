@@ -2,16 +2,15 @@ package com.bigkoo.pickerview.view;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.bigkoo.pickerview.R;
 import com.bigkoo.pickerview.configure.PickerOptions;
-
 import java.util.List;
 
 /**
@@ -65,9 +64,9 @@ public class OptionsPickerView<T> extends BasePickerView implements View.OnClick
             rv_top_bar.setBackgroundColor(mPickerOptions.bgColorTitle);
 
             //设置文字大小
-            btnSubmit.setTextSize(mPickerOptions.textSizeSubmitCancel);
-            btnCancel.setTextSize(mPickerOptions.textSizeSubmitCancel);
-            tvTitle.setTextSize(mPickerOptions.textSizeTitle);
+            btnSubmit.setTextSize(TypedValue.COMPLEX_UNIT_PX, mPickerOptions.textSizeSubmitCancel);
+            btnCancel.setTextSize(TypedValue.COMPLEX_UNIT_PX, mPickerOptions.textSizeSubmitCancel);
+            tvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX ,mPickerOptions.textSizeTitle);
         } else {
             mPickerOptions.customListener.customLayout(LayoutInflater.from(context).inflate(mPickerOptions.layoutRes, contentContainer));
         }
